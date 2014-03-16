@@ -1,9 +1,13 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+<div>
+	<ul>
+		<li ng-repeat="(key, val) in stacks">
+			<input type="hidden" ng-model="key" value="{{key}}" />
+			<h3>{{key}}</h3> 
+			<div><a class="btn btn-primary" href="#stack/{{key}}?show=all">Load all ({{val.length}})</a></div>
+			<div ng-show="key=='A1' && incorrectA1.length>2"><a class="btn btn-info btn-small" href="#stack/{{key}}?show=incorrect">Load the ones i didnt remember</a></div>	
+			<div ng-show="key=='A2' && incorrectA2.length>2"><a class="btn btn-info btn-small" href="#stack/{{key}}?show=incorrect">Load the ones i didnt remember</a></div>	
+			<div ng-show="key=='B1' && incorrectB1.length>2"><a class="btn btn-info btn-small" href="#stack/{{key}}?show=incorrect">Load the ones i didnt remember</a></div>	
+			<div ng-show="key=='B2' && incorrectB2.length>2"><a class="btn btn-info btn-small" href="#stack/{{key}}?show=incorrect">Load the ones i didnt remember</a></div>	
+		</li>
+	</ul>
 </div>
